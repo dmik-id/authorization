@@ -42,6 +42,14 @@ class UserController {
         return res.json({token})
  
     }
+    async getUsers(req, res, next){
+        try {
+            const users = await User.findAll()
+            return res.json(users)
+        } catch(e){
+
+        }
+    }
 }
  
 module.exports = new UserController()
